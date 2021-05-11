@@ -5,7 +5,7 @@ module.exports = {
         type: 'select',
         name: 'category',
         message: 'Which Atomic Design category?',
-        choices: ['atoms', 'molecules', 'organisms', 'templates', 'layouts']
+        choices: ['molecules', 'organisms', 'templates']
       },
       {
         type: 'input',

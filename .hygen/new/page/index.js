@@ -2,15 +2,9 @@ module.exports = {
   prompt: ({ inquirer, args }) => {
     const questions = [
       {
-        type: 'select',
-        name: 'category',
-        message: 'Which Atomic Design category?',
-        choices: ['atoms', 'molecules', 'organisms', 'templates', 'layouts'],
-      },
-      {
         type: 'input',
         name: 'name',
-        message: 'What is the name of component?',
+        message: 'What is the name of page?'
       },
       {
         type: 'input',
@@ -21,9 +15,9 @@ module.exports = {
     return inquirer
       .prompt(questions)
       .then(answers => {
-        const { category, name, dir } = answers
-        const path = `${category}/${ dir ? `${dir}/` : `` }${name}`
-        const targetDir = `src/components/${path}`
+        const { name, dir } = answers
+        const path = `${ dir ? `${dir}` : `` }`
+        const targetDir = `src/pages/${path}`
         const props = `${name}Props`
         return { ...answers, targetDir, props }
       })
