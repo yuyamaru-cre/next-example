@@ -11,7 +11,7 @@ export default function GlobalMenu(props: GlobalMenuProps) {
         <div className="navbar-item">
           <div className="columns is-mobile">
             <p className={'column' + ' ' + styles.column}>
-              <Link href="/">
+              <Link href="/home">
                 <span className="button is-white">
                   <i className="fas fa-home"></i>
                 </span>
