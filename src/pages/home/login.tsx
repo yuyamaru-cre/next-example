@@ -1,13 +1,10 @@
 import DefaultLayout from '../../components/layouts/DefaultLayout/DefaultLayout'
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type testProps = {}
-
-export default function test(props: testProps) {
+export default function Login() {
   return (
     <>
       <DefaultLayout>
-        test
+        ログイン画面
       </DefaultLayout>
     </>
   )
