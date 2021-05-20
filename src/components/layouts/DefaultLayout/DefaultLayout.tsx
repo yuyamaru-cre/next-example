@@ -1,7 +1,7 @@
 import styles from './style.module.scss'
 import React from 'react'
-import GlobalHeader from '../../molecules/GlobalHeader/GlobalHeader'
-import GlobalFooter from '../../molecules/GlobalFooter/GlobalFooter'
+import GlobalHeader from '@/components/molecules/GlobalHeader/GlobalHeader'
+import GlobalFooter from '@/components/molecules/GlobalFooter/GlobalFooter'
 
 export type DefaultLayoutProps = {
   children: React.ReactNode

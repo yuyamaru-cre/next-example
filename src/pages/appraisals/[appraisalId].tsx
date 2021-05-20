@@ -1,5 +1,5 @@
-import MainLayout from '../../components/layouts/MainLayout/MainLayout'
-import AppraisalDetail from '../../components/templates/Appraisal/AppraisalDetail/AppraisalDetail'
+import MainLayout from '@/components/layouts/MainLayout/MainLayout'
+import AppraisalDetail from '@/components/templates/Appraisal/AppraisalDetail/AppraisalDetail'
 import { useRouter } from 'next/router'
 
 export default function AppraisalId() {

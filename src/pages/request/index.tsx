@@ -1,4 +1,4 @@
-import MainLayout from '../../components/layouts/MainLayout/MainLayout'
+import MainLayout from '@/components/layouts/MainLayout/MainLayout'
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type indexProps = {}

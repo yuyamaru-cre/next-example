@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import MainLayout from '../../components/layouts/MainLayout/MainLayout'
+import Link from 'next/link'
+import DefaultLayout from '@/components/layouts/DefaultLayout/DefaultLayout'
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type indexProps = {}
@@ -8,17 +8,13 @@ type indexProps = {}
 export default function index(props: indexProps) {
   const router = useRouter()
 
-  useEffect(() => {
-    router.push('/appraisals/1')
-  }, [router])
   return (
     <>
-      <MainLayout>
-        This is Home Page
+      <DefaultLayout>
+        This is Home Page（Title）
         <br />
-        <br />
-        Redirect to /appraisals/[id]
-      </MainLayout>
+        <Link href="/appraisals/1">Go to /appraisals/[id]</Link>
+      </DefaultLayout>
     </>
   )
 }
