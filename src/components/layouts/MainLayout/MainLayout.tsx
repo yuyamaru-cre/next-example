@@ -1,6 +1,6 @@
 import styles from './style.module.scss'
 import React from 'react'
-import GlobalMenu from '../../molecules/GlobalMenu/GlobalMenu'
+import GlobalMenu from '@/components/molecules/GlobalMenu/GlobalMenu'
 
 export type DefaultLayoutProps = {
   children: React.ReactNode

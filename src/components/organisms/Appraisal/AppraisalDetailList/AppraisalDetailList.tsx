@@ -13,16 +13,20 @@ export default function AppraisalDetailList({
 } : AppraisalDetailListProps) {
   return (
     <>
-      <div className="panel">
-        <a className="panel-block">
-          査定依頼中 {progress} 件
-        </a>
-        <a className="panel-block">
-          査定中 {doing} 件
-        </a>
-        <a className="panel-block">
-          査定済 {done} 件
-        </a>
+      <div className="card has-background-light">
+        <div className="card-content">
+          <div className="panel has-background-white">
+            <a className="panel-block">
+              査定依頼中 {progress} 件
+            </a>
+            <a className="panel-block">
+              査定中 {doing} 件
+            </a>
+            <a className="panel-block">
+              査定済 {done} 件
+            </a>
+          </div>
+        </div>
       </div>
     </>
   )

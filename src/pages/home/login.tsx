@@ -1,4 +1,4 @@
-import DefaultLayout from '../../components/layouts/DefaultLayout/DefaultLayout'
+import DefaultLayout from '@/components/layouts/DefaultLayout/DefaultLayout'
 
 export default function Login() {
   return (
