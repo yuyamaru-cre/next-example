@@ -1,34 +1,127 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Typescript + Next.js + Bulma(Sass)
 
-## Getting Started
-
-First, run the development server:
+※パッケージ管理はyarn
+## ローカル環境の立ち上げ
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## CLI
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+hygenで管理 `/.hygen/` 配下で設定を定義
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+yarn new:compornet
+```
 
-## Learn More
+- pageの追加
+    - `yarn new:page`
+- componentの追加
+    - `yarn new:compornet`
 
-To learn more about Next.js, take a look at the following resources:
+## 概要
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### デザインパターン
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+atomicデザインを採用。
+但し、細かすぎる粒度でのパーツ化は返って管理やメンテナンスの負担になるため、atomレベルは使用しないものとする
 
-## Deploy on Vercel
+### ディレクトリ構成
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+app/
+  ├ assets/
+  │   ├ images
+  │   ︙
+  │   └ foo
+  ├ constants/
+  │   ├ Common.tsx
+  │   ︙
+  │   └ Foo.tsx
+  ├ config/
+  ├ containers/
+  ├ core/ 
+  │  ├ adapters/
+  │  ├ domains/
+  │  │  ├ models/
+  │  │  └ validators/
+  │  ├ usecases/
+  │  └ view/
+  │     └ models/
+  ├ components/
+  │   ├ templates /*各画面の中身（出し分け）*/
+  │   │   ├ auth/
+  │   │   │   ├ Login
+  │   │   │   │   ├ Login.tsx
+  │   │   │   │   └ style.module.css
+  │   │   │   └ Logout
+  │   │   │       ├ Logout.tsx
+  │   │   │       └ style.module.css
+  │   │   ︙
+  │   │   └ Foo/
+  │   │       ├ ︙
+  │   │       └ Hoge
+  │   │           ├ Hoge.tsx
+  │   │           └ style.module.css
+  │   ├ organisms /*各画面のパーツ*/
+  │   │   ├ common/
+  │   │   │   ├ ︙
+  │   │   │   ├ Header/
+  │   │   │   │   ├ Header.tsx
+  │   │   │   │   └ style.module.css
+  │   │   │   └ Footer/
+  │   │   │       ├ Footer.tsx
+  │   │   │       └ style.module.css
+  │   │   ├ Assessment/
+  │   │   │   ├ List/
+  │   │   │   │   ├ List.tsx
+  │   │   │   │   └ style.module.css
+  │   │   │   ├ Info/
+  │   │   │   │   ├ Info.tsx
+  │   │   │   │   └ style.module.css
+  │   │   │   ︙
+  │   │   │   └ Search/
+  │   │   │       ├ Search.tsx
+  │   │   │       └ style.module.css
+  │   │   ︙
+  │   │   └ Foo/
+  │   │       ├ style.module.css
+  │   │       └ Foo.tsx
+  │   └ molecules /*各画面の詳細パーツ*/
+  │       ├ SerchForm
+  |       │   ├ SerchForm.tsx
+  │       │   └ style.module.css
+  │       ├ ImageCarousel
+  │       │   ├ ImageCarousel.tsx
+  │       │   └ style.module.css
+  │       ︙
+  │       └ Modal
+  │           ├ Modal.tsx
+  │           └ style.module.css
+  ├ pages/ /*各画面の大枠*/
+  │   ├ index.tsx
+  │   ├ _app.tsx
+  │   ├ _document.tsx
+  │   ├ Auth
+  │   │   ├ Auth.tsx
+  │   │   └ style.module.css
+  │   ├ Asessment
+  │   │   ├ [item].tsx
+  │   │   └ style.module.css
+  │   ︙
+  │   └ Foo
+  │       ├ Foo.tsx
+  │       └ style.module.css
+  ├ hooks/
+  │   ├ useTab.tsx
+  │   └ useToggle.tsx
+  ├ public/
+  ├ states/
+  ├ types/
+  ├ utilities/
+  ├ next.config.js
+  └ package.json
+```
