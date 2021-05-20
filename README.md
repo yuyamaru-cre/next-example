@@ -32,7 +32,7 @@ atomicデザインを採用。
 ### ディレクトリ構成
 
 ```
-app/
+src/
   ├ assets/
   │   ├ images
   │   ︙
@@ -52,6 +52,14 @@ app/
   │  └ view/
   │     └ models/
   ├ components/
+  │   ├ layouts /*各画面の大枠*/
+  │   │   ├ DefaultLayout/
+  │   │   │   ├ DefaultLayout.tsx
+  │   │   │   └ style.module.css
+  │   │   ︙
+  │   │   └ MainLayout/
+  │   │       ├ MainLayout.tsx
+  │   │       └ style.module.css
   │   ├ templates /*各画面の中身（出し分け）*/
   │   │   ├ auth/
   │   │   │   ├ Login
@@ -122,6 +130,7 @@ app/
   ├ states/
   ├ types/
   ├ utilities/
+  ├ .hygen/
   ├ next.config.js
   └ package.json
 ```
