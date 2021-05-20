@@ -25,6 +25,7 @@ export default function Login() {
   return (
     <>
       <DefaultLayout>
+        {/* FIXME: indexの中でテンプレートを出し分ける？？？ */}
         <form className="box is-shadowless" onSubmit={handleSubmit}>
           <div className="field">
             <label className="label">ID</label>
