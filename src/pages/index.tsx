@@ -1,18 +1,19 @@
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import Link from 'next/link'
+import DefaultLayout from '../components/layouts/DefaultLayout/DefaultLayout'
 
 export default function Index() {
-  const router = useRouter()
-
-  useEffect(() => {
-    router.push('/home')
-  }, [router])
 
   return (
     <>
-      This is Home
-      <br />
-      Redirecting to /home
+      <DefaultLayout>
+        This is Title Page
+        <br />
+        <h1>
+          Appraisal
+        </h1>
+        <br />
+        <Link href="/home">Go to /home</Link>
+      </DefaultLayout>
     </>
   )
 }

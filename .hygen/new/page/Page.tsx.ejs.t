@@ -6,5 +6,9 @@ to: <%= targetDir %>/<%= name %>.tsx
 type <%= props %> = {}
 
 export default function <%= name %>(props: <%= props %>) {
-  return <><%= name %></>
+  return (
+    <>
+      <%= name %>
+    </>
+  )
 }
