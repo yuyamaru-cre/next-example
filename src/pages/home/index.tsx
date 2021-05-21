@@ -14,6 +14,8 @@ export default function index(props: indexProps) {
         This is Home Page（Title）
         <br />
         <Link href="/appraisals/1">Go to /appraisals/[id]</Link>
+        <br />
+        <Link href="/test/weather">Go to weather</Link>
       </DefaultLayout>
     </>
   )
